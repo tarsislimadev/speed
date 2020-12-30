@@ -4,6 +4,10 @@
 
 Test your speed skills in this game.
 
+<a href="http://sucht.tarsis.cc/">
+  <img src="./screenshot.png" />
+</a>
+
 ## Setup
 
 Install [Node.js](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/)
