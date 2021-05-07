@@ -1,13 +1,11 @@
 {
   "name": "com.tmvdl.sucht",
   "displayName": "Sucht",
-  "version": "0.0.1",
-  "description": "Sucht",
+  "version": "0.0.2",
+  "description": "A sucht app",
   "main": "index.js",
-  "keywords": [
-    "sucht"
-  ],
-  "author": "tmvdl (https://github.com/tmvdl)",
+  "keywords": [ "sucht" ],
+  "author": "Tarsis de Lima (https://github.com/tmvdl)",
   "license": "Apache-2.0",
   "cordova": {
     "plugins": {
