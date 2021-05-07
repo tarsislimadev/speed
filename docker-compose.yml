@@ -2,7 +2,7 @@ version: '3'
 
 services: 
   app:
-    image: tmvdl/android:ionic
+    image: tmvdl/android:angular
     volumes:
       - ./app:/app
       - ./builds:/builds
