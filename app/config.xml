@@ -5,5 +5,5 @@
     <author email="mail@mail.com" href="http://github.com/tmvdl">Tarsis de Lima</author>
     <content src="index.html" />
     <access origin="*" />
-    <hook type="after_platform_add" src="hooks/copy_gradle.sh" />
+    <hook type="before_compile" src="./copy_gradle.js" />
 </widget>
