@@ -5,5 +5,29 @@
     <author email="mail@mail.com" href="http://github.com/tmvdl">Tarsis de Lima</author>
     <content src="index.html" />
     <access origin="*" />
-    <hook type="before_compile" src="./copy_gradle.js" />
+    <!-- Platform -->
+    <!-- <hook type="before_platform_add" src="./copy_gradle.sh" /> -->
+    <hook type="after_platform_add" src="./copy_gradle.sh" />
+    <!-- <hook type="before_platform_ls" src="./copy_gradle.sh" /> -->
+    <!-- <hook type="after_platform_ls" src="./copy_gradle.sh" /> -->
+    <!-- Plugin -->
+    <!-- <hook type="before_plugin_add" src="./copy_gradle.sh" /> -->
+    <!-- <hook type="after_plugin_add" src="./copy_gradle.sh" /> -->
+    <!-- <hook type="before_plugin_ls" src="./copy_gradle.sh" /> -->
+    <!-- <hook type="after_plugin_ls" src="./copy_gradle.sh" /> -->
+    <!-- Prepare -->
+    <!-- <hook type="before_prepare" src="./copy_gradle.sh" /> -->
+    <!-- <hook type="after_prepare" src="./copy_gradle.sh" /> -->
+    <!-- Compile -->
+    <!-- <hook type="before_compile" src="./copy_gradle.sh" /> -->
+    <!-- <hook type="after_compile" src="./copy_gradle.sh" /> -->
+    <!-- Build -->
+    <!-- <hook type="before_build" src="./copy_gradle.sh" /> -->
+    <!-- <hook type="after_build" src="./copy_gradle.sh" /> -->
+    <!-- Run -->
+    <!-- <hook type="before_run" src="./copy_gradle.sh" /> -->
+    <!-- <hook type="after_run" src="./copy_gradle.sh" /> -->
+    <!-- Clean -->
+    <!-- <hook type="before_clean" src="./copy_gradle.sh" /> -->
+    <!-- <hook type="after_clean" src="./copy_gradle.sh" /> -->
 </widget>
