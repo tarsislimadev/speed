@@ -7,3 +7,9 @@ services:
     volumes:
       - ./src/app:/app
       - ./builds:/builds
+  www:
+    build: './src/www'
+    volumes:
+      - './src/www/html:/usr/share/nginx/html/'
+    ports:
+      - '80:80'
