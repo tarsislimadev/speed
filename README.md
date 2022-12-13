@@ -1,36 +1,13 @@
 # Sucht
 
-### A speed game
+A speed game
 
-Test your speed skills in this game.
+## How to
 
-<a href="http://sucht.tarsis.cc/">
-  <img src="./screenshot.png" />
-</a>
-
-## Setup
-
-Install [Node.js](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/)
-
-Clone this repository
-
-```sh
-git clone https://github.com/tmvdl/sucht.git
-cd sucht
+```
+docker run -p 80:80 -d tmvdl/projects:sucht
 ```
 
-Install the dependencies
+## License
 
-```sh
-yarn
-```
-
-Run the project
-
-```sh
-yarn start
-```
-
-View on browser
-
-http://localhost:4200/
+[MIT](./LICENSE)
