@@ -7,6 +7,11 @@ services:
     volumes:
       - ./src/app:/app
       - ./builds:/builds
+    environment:
+      - 'CM_KEYSTORE_PATH=keystore'
+      - 'CM_KEYSTORE_PASSWORD=keystore'
+      - 'CM_KEY_ALIAS=keystore'
+      - 'CM_KEY_PASSWORD=keystore'
   www:
     build: './src/www'
     volumes:
