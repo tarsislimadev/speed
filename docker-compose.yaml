@@ -2,7 +2,7 @@ version: '3'
 
 services: 
   app:
-    # image: tmvdl/android:angular
+    image: tmvdl/projects:sucht
     build: './src/app'
     volumes:
       - ./src/app:/app
