@@ -1,0 +1,16 @@
+name: GitHub Artifacts
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '45 0 * * *'
+  push:
+    branches: 
+      - 'main'
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GitHub Artifacts
+        run: echo GitHub Artifacts
