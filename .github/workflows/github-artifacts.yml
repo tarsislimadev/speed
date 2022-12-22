@@ -15,8 +15,8 @@ jobs:
       - name: Check out
         uses: actions/checkout@v3
 
-      - name: Pull subprojects
-        run: bash env/pull.sh
+      # - name: Pull subprojects
+      #   run: bash env/pull.sh
 
       - name: Install packages
         run: bash env/install.sh
