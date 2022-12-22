@@ -12,5 +12,20 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - name: GitHub Artifacts
-        run: echo GitHub Artifacts
+      - name: Check out
+        uses: actions/checkout@v3
+
+      - name: Pull subprojects
+        run: bash env/pull.sh
+
+      - name: Install packages
+        run: bash env/install.sh
+
+      - name: Build Android .apk
+        run: bash env/build.sh
+
+      - name: Create release
+        run: gh release create v$( date +%Y%m%d ) ./src/app/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
+        env:
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
