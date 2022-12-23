@@ -7,6 +7,9 @@ services:
     volumes:
       - ./src/app:/app
       - ./builds:/builds
+    ports:
+      - '8100:8100'
+      - '3000:3000'
     environment:
       - 'CM_KEYSTORE_PATH=keystore'
       - 'CM_KEYSTORE_PASSWORD=keystore'
