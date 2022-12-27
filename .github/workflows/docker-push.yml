@@ -22,7 +22,7 @@ jobs:
           password: ${{ secrets.GITHUBDOCKER }}
 
       - name: Build and Tag
-        run: sh env/build.sh 
+        run: sh env/build-www.sh 
 
       - name: Push
         run: docker push tmvdl/projects:sucht
