@@ -9,7 +9,7 @@ on:
       - 'main'
 
 jobs:
-  docker:
+  artifacts:
     runs-on: ubuntu-latest
     steps:
       - name: Check out
@@ -22,7 +22,7 @@ jobs:
         run: bash env/install.sh
 
       - name: Build Android .apk
-        run: bash env/build.sh
+        run: bash env/build-app.sh
 
       - name: Create release
         run: gh release create v$( date +%Y%m%d ) ./src/app/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
