@@ -2,11 +2,10 @@ version: '3'
 
 services: 
   app:
-    image: tmvdl/projects:sucht
     build: './src/app'
     volumes:
-      - ./src/app:/app
-      - ./builds:/builds
+      - './src/app:/app'
+      - './builds:/builds'
     ports:
       - '8100:8100'
       - '3000:3000'
@@ -16,6 +15,7 @@ services:
       - 'CM_KEY_ALIAS=keystore'
       - 'CM_KEY_PASSWORD=keystore'
   www:
+    image: 'tmvdl/projects:sucht'
     build: './src/www'
     volumes:
       - './src/www/html:/usr/share/nginx/html/'
