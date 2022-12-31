@@ -5,7 +5,7 @@ on:
   schedule:
     - cron: '45 0 * * *'
   push:
-    branches: 
+    branches:
       - 'main'
 
 jobs:
@@ -18,14 +18,14 @@ jobs:
       # - name: Pull subprojects
       #   run: bash env/pull.sh
 
-      - name: Install packages
-        run: bash env/install.sh
+      - name: Build apk
+        run: docker-compose up apk
 
-      - name: Build Android .apk
-        run: bash env/build-app.sh
+      - name: Export apk
+        run: docker run -v $(pwd)/dist:/dist -w /dist apk cp /app/hello/platforms/android/app/build/outputs/apk/debug/*.apk . 
 
       - name: Create release
-        run: gh release create v$( date +%Y%m%d ) ./src/app/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
+        run: gh release create v$( date +%Y%m%d%H%M ) ./dist/*.apk
         env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

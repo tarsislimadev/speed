@@ -1,19 +1,20 @@
 version: '3'
 
 services: 
+
   app:
     build: './src/app'
     volumes:
       - './src/app:/app'
-      - './builds:/builds'
-    ports:
-      - '8100:8100'
-      - '3000:3000'
-    environment:
-      - 'CM_KEYSTORE_PATH=keystore'
-      - 'CM_KEYSTORE_PASSWORD=keystore'
-      - 'CM_KEY_ALIAS=keystore'
-      - 'CM_KEY_PASSWORD=keystore'
+
+  apk:
+    image: apk
+    build: 
+      context: './src/app'
+      dockerfile: 'Dockerfile.apk'
+    volumes:
+      - './src/app:/app'
+
   www:
     image: 'tmvdl/projects:sucht'
     build: './src/www'
