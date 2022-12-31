@@ -8,6 +8,8 @@ RUN npm i
 
 RUN ionic build
 
+RUN ls -la
+
 FROM tmvdl/android:ionic
 
 WORKDIR /app
