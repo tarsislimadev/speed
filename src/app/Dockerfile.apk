@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY . .
 
+RUN npm i
+
 RUN ionic build
 
 FROM tmvdl/android:ionic
