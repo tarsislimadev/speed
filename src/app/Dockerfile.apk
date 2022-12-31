@@ -20,7 +20,7 @@ WORKDIR /app/hello
 
 RUN cordova platform add android
 
-COPY --from=stage /app/dist www
+COPY --from=stage /app/www www
 
 RUN cordova build android
 
