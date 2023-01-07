@@ -15,14 +15,11 @@ jobs:
       - name: Check out
         uses: actions/checkout@v3
 
-      # - name: Pull subprojects
-      #   run: bash env/pull.sh
+      - name: Build app
+        run: docker-compose up app
 
-      - name: Build apk
-        run: docker-compose up apk
-
-      - name: Export apk
-        run: docker run -v $(pwd)/dist:/dist -w /dist apk cp /app/hello/platforms/android/app/build/outputs/apk/debug/*.apk . 
+      - name: Export app
+        run: docker run -v $(pwd)/dist:/dist -w /dist app cp /app/hello/platforms/android/app/build/outputs/apk/debug/*.apk . 
 
       - name: Create release
         run: gh release create v$( date +%Y%m%d%H%M ) ./dist/*.apk
