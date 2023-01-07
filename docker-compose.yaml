@@ -3,22 +3,18 @@ version: '3'
 services: 
 
   app:
+    image: 'artifacts'
+    build: './src'
+
+  artifacts:
+    image: 'tmvdl/projects:sucht'
     build: './src/app'
     volumes:
       - './src/app:/app'
 
-  apk:
-    image: apk
-    build: 
-      context: './src/app'
-      dockerfile: 'Dockerfile.apk'
-    volumes:
-      - './src/app:/app'
-
   www:
-    image: 'tmvdl/projects:sucht'
     build: './src/www'
     volumes:
-      - './src/www/html:/usr/share/nginx/html/'
+      - './src/www/html:/usr/share/nginx/html'
     ports:
       - '80:80'
