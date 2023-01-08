@@ -4,13 +4,11 @@ services:
 
   github-release:
     image: 'github-release'
-    build: './src'
+    build: './src/app'
 
-  artifacts:
+  docker-push:
     image: 'tmvdl/projects:sucht'
     build: './src/app'
-    volumes:
-      - './src/app:/app'
 
   www:
     build: './src/www'
@@ -18,3 +16,4 @@ services:
       - './src/www/html:/usr/share/nginx/html'
     ports:
       - '80:80'
+
