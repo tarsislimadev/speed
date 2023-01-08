@@ -4,4 +4,6 @@ WORKDIR /app
 
 COPY . .
 
-CMD ionic serve
+RUN cordova platform add android
+
+RUN cordova build android
