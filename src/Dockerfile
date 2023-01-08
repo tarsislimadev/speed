@@ -1,12 +1,8 @@
-FROM tmvdl/android:cordova
+FROM tmvdl/android:ionic
 
 WORKDIR /app
 
-RUN cordova create sucht com.brtmvdl.sucht sucht
-
-WORKDIR /app/sucht
-
-COPY app www
+COPY . .
 
 RUN cordova platform add android
 

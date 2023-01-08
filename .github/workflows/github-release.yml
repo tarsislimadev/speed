@@ -15,11 +15,14 @@ jobs:
       - name: Check out
         uses: actions/checkout@v3
 
-      - name: Build app
+      - name: Docker build
         run: docker-compose build github-release
 
+      - name: List files
+        run: docker run github-release find -name '*apk'
+
       - name: Export app
-        run: docker run -v $(pwd)/dist:/dist github-release cp ./platforms/android/app/build/outputs/apk/debug/*.apk /dist
+        run: docker run -v $(pwd)/dist:/dist github-release cp -rfv ./platforms/android/app/build/outputs/apk/debug/*.apk /dist 
 
       - name: Create release
         run: gh release create v$( date +%Y%m%d%H%M ) ./dist/*.apk
