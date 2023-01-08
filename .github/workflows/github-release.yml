@@ -1,12 +1,12 @@
 name: GitHub release
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: '45 0 * * *'
+    - cron: '50 23 * * *'
   push:
     branches:
       - 'main'
+  workflow_dispatch:
 
 jobs:
   artifacts:
@@ -16,13 +16,12 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Build app
-        run: docker-compose up app
+        run: docker-compose build github-release
 
       - name: Export app
-        run: docker run -v $(pwd)/dist:/dist -w /dist app cp /app/hello/platforms/android/app/build/outputs/apk/debug/*.apk . 
+        run: docker run -v $(pwd)/dist:/dist github-release cp /app/hello/platforms/android/app/build/outputs/apk/debug/*.apk /dist 
 
       - name: Create release
         run: gh release create v$( date +%Y%m%d%H%M ) ./dist/*.apk
         env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
