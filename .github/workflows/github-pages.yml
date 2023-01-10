@@ -13,32 +13,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: echo github
-        run: echo ${{ github.* }}
-
-      - name: echo env
-        run: echo ${{ env.* }}
-
-      - name: echo vars
-        run: echo ${{ vars.* }}
-
-      - name: echo job
-        run: echo ${{ job.* }}
-
-      - name: echo secrets
-        run: echo ${{ secrets.* }}
-
-      - name: echo strategy
-        run: echo ${{ strategy.* }}
-
-      - name: echo matrix
-        run: echo ${{ matrix.* }}
-
-      - name: echo needs
-        run: echo ${{ needs.* }}
-
-      - name: echo inputs
-        run: echo ${{ inputs.* }}
+      - name: Repository
+        run: echo ${{ github.repository }}
 
       # - name: Push www
       #   env:
