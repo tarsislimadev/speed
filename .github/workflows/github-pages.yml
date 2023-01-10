@@ -1,0 +1,39 @@
+name: GitHub pages
+
+on:
+  push:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+jobs:
+  artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: List actions vars
+        run:  | 
+          echo ${{ github }}
+          echo ${{ env }}
+          echo ${{ vars }}
+          echo ${{ job }}
+          echo ${{ jobs }}
+          echo ${{ steps }}
+          echo ${{ runner }}
+          echo ${{ secrets }}
+          echo ${{ strategy }}
+          echo ${{ matrix }}
+          echo ${{ needs }}
+          echo ${{ inputs }}
+
+      # - name: Push www
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: |
+      #     gh repo clone brtmvdl/brtmvdl.github.io
+      #     cd brtmvdl.github.io
+      #     cp ${{ github.workspace }}/src/www/ ./sucht -rfv
+      #     git add ./sucht
+      #     git commit -m "Fixing "
