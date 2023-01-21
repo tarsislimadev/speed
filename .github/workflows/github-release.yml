@@ -18,9 +18,6 @@ jobs:
       - name: Docker build
         run: docker-compose build github-release
 
-      - name: List files
-        run: docker run github-release find -name '*apk'
-
       - name: Export app
         run: docker run -v $(pwd)/dist:/dist github-release cp -rfv ./platforms/android/app/build/outputs/apk/debug/*.apk /dist 
 
