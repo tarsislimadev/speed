@@ -11,5 +11,5 @@ jobs:
     steps:
       - 
         name: Pull docker image
-        run: docker pull tmvdl/projects:sucht
+        run: docker pull tmvdl/projects -a
 
