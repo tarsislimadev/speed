@@ -1,10 +1,10 @@
-# Sucht
+# Speed
 
 ### A speed game
 
 Test your speed skills in this game.
 
-<a href="http://sucht.tarsis.cc/">
+<a href="http://speed.tarsis.cc/">
   <img src="./screenshot.png" />
 </a>
 
@@ -15,8 +15,8 @@ Install [Node.js](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/)
 Clone this repository
 
 ```sh
-git clone https://github.com/tmvdl/sucht.git
-cd sucht
+git clone https://github.com/tmvdl/speed.git
+cd speed
 ```
 
 Install the dependencies

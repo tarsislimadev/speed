@@ -7,7 +7,7 @@ services:
     build: './src/app'
 
   docker-push:
-    image: 'tmvdl/projects:sucht'
+    image: 'tmvdl/projects:speed'
     build: './src/app'
 
   www:

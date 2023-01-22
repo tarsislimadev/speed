@@ -12,9 +12,9 @@ FROM tmvdl/android:ionic
 
 WORKDIR /app
 
-RUN cordova create sucht com.brtmvdl.sucht sucht
+RUN cordova create speed com.brtmvdl.speed speed
 
-WORKDIR /app/sucht
+WORKDIR /app/speed
 
 COPY --from=stage /app/build www
 
