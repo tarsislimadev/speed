@@ -1,1 +1,1 @@
-docker-compose -f ./docker-compose.yaml build www
+docker-compose build www
