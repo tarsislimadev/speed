@@ -5,14 +5,20 @@ services:
   builder:
     image: 'builder'
     build: './src'
+    volumes:
+      - './src/app:/app'
 
   github-release:
     image: 'github-release'
     build: './src/app'
+    volumes:
+      - './src/app:/app'
 
   docker-push:
     image: 'tmvdl/projects:speed'
     build: './src/app'
+    volumes:
+      - './src/app:/app'
 
   www:
     build: './src/www'
