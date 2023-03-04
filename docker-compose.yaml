@@ -2,6 +2,10 @@ version: '3'
 
 services: 
 
+  builder:
+    image: 'builder'
+    build: './src'
+
   github-release:
     image: 'github-release'
     build: './src/app'
