@@ -15,8 +15,11 @@ jobs:
       - name: Check out
         uses: actions/checkout@v3
 
-      - name: Docker install
+      - name: Release install
         run: docker-compose run github-release npm install
+
+      - name: Release build
+        run: docker-compose run github-release npm run build
 
       - name: Docker build
         run: docker-compose build github-release
