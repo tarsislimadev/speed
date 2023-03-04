@@ -21,6 +21,9 @@ jobs:
       - name: Release build
         run: docker-compose run builder npm install && npm run build
 
+      - name: Release build
+        run: echo docker-compose run builder npm install && npm run build
+
       - name: Docker build
         run: docker-compose build github-release
 
