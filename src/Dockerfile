@@ -1,9 +1,8 @@
-FROM tmvdl/node:angular as stage
+FROM tmvdl/node:angular
 
 WORKDIR /app
 
 COPY app .
 
-# RUN npm i
+ENTRYPOINT npm start
 
-# RUN npm run build
