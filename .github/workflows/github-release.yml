@@ -15,16 +15,13 @@ jobs:
       - name: Check out
         uses: actions/checkout@v3
 
-      # - name: Release install
-      #   run: docker-compose run builder npm install
-
       - name: Release build
         run: docker-compose run builder npm install && npm run build
 
-      - name: Release build
-        run: echo docker-compose run builder npm install && npm run build
+      - name: Docker build Speed
+        run: docker-compose build speed
 
-      - name: Docker build
+      - name: Docker build github-release
         run: docker-compose build github-release
 
       - name: Export app

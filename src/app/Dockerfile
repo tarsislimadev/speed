@@ -1,13 +1,13 @@
-FROM tmvdl/android:app
+FROM tmvdl/node:angular as angular
 
 WORKDIR /app
 
-RUN cordova create speed com.brtmvdl.speed speed
+COPY . .
 
-WORKDIR /app/speed
+RUN npm run build
 
-COPY --from=stage /app/build www
+FROM nginx:stable
 
-RUN cordova platform add android
+WORKDIR /usr/share/nginx/html
 
-RUN cordova build android
+COPY --from=angular /app/dist .
