@@ -22,7 +22,7 @@ jobs:
           password: ${{ secrets.GITHUBDOCKER }}
 
       - name: Docker build
-        run: docker-compose build docker-push
+        run: docker-compose build speed
 
       - name: Docker push
         run: docker push tmvdl/projects -a
