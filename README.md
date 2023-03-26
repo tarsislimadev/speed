@@ -7,7 +7,11 @@ A speed game
 ## How to
 
 ```
-docker run -p 80:80 -d tmvdl/projects:speed
+bash env/up.sh app
+```
+
+```
+docker run -p 8080:80 tmvdl/projects:speed
 ```
 
 ## License
