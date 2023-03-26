@@ -21,8 +21,14 @@ jobs:
           username: tmvdl
           password: ${{ secrets.GITHUBDOCKER }}
 
+      - name: Install
+        run: docker-compose run app npm install
+
+      - name: Angular build
+        run: docker-compose run app npm run build 
+
       - name: Docker build
-        run: docker-compose build speed
+        run: docker-compose build docker-push 
 
       - name: Docker push
         run: docker push tmvdl/projects -a
