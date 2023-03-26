@@ -9,17 +9,9 @@ services:
     ports:
       - '80:4200'
 
-  apk:
-    image: 'apk'
-    build: 
-      context: './src'
-      dockerfile: 'Dockerfile.apk'
-
   github-release:
     image: 'github-release'
-    build: './src/app'
-    volumes:
-      - './src/app:/app'
+    build: './src'
 
   docker-push:
     image: 'tmvdl/projects:speed'
