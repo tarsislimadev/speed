@@ -1,18 +1,20 @@
-# FROM tmvdl/node:angular as angular
+FROM tmvdl/node:angular as angular
 
-FROM node:10.13
+USER node
 
-RUN npm i @angular/cli 
+# FROM node:10.13
+
+# RUN npm i @angular/cli 
 
 WORKDIR /app
 
 COPY . .
 
-RUN npm install
+# RUN npm install
 
-RUN npm run build
+# RUN npm run build
 
-ENTRYPOINT npm start
+CMD npm start
 
 # FROM nginx:stable
 
