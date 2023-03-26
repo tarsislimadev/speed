@@ -2,8 +2,7 @@ version: '3'
 
 services:
 
-  speed:
-    image: 'tmvdl/projects:speed'
+  app:
     build: './src/app'
     volumes:
       - './src/app:/app'
@@ -19,5 +18,10 @@ services:
   github-release:
     image: 'github-release'
     build: './src/app'
+    volumes:
+      - './src/app:/app'
+
+  docker-push:
+    image: 'tmvdl/projects:speed'
     volumes:
       - './src/app:/app'
