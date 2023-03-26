@@ -15,13 +15,10 @@ jobs:
       - name: Check out
         uses: actions/checkout@v3
 
-      # - name: Release build
-      #   run: docker-compose run builder npm install && npm run build
+      - name: Install
+        run: docker-compose run app npm install
 
-      - name: Docker build Speed
-        run: docker-compose build speed
-
-      - name: Docker build github-release
+      - name: Docker build
         run: docker-compose build github-release
 
       - name: Export app
@@ -31,3 +28,4 @@ jobs:
         run: gh release create v$( date +%Y%m%d%H%M ) ./dist/*.apk
         env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
